@@ -1,0 +1,58 @@
+# === Python Bytecode ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# === Environment ===
+.env
+.venv/
+env/
+venv/
+*.egg-info/
+pip-wheel-metadata/
+*.eggs
+
+# === Model Files ===
+*.h5
+*.keras
+*.ckpt
+*.tflite
+*.pb
+
+# === Jupyter Notebooks ===
+.ipynb_checkpoints/
+
+# === Log Files ===
+*.log
+
+# === Data Files ===
+*.csv
+*.json
+*.db
+
+# === IDEs and Editors ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+
+# === FastAPI Static Cache ===
+templates/static/__pycache__/
+static/__pycache__/
+
+# === Node/JS (if any frontend) ===
+node_modules/
+dist/
+build/
+
+# === Others ===
+*.bak
+*.tmp
+
+# === Git LFS config (optional) ===
+.gitattributes
