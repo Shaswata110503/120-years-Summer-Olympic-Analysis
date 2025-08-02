@@ -51,3 +51,12 @@ noc_regions.csv
 
 4. Run the Streamlit app:
 streamlit run main.py
+
+---
+
+## 👨‍💻 Author
+
+**Shaswata De**  
+🎓 B.Tech, Electronics & Communication Engineering  
+📧 [deshaswata2023@gmail.com](mailto:deshaswata2023@gmail.com)  
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/shaswata-de-a21042291/)
