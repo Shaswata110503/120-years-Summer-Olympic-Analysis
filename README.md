@@ -41,17 +41,21 @@ Explore medal tallies, athlete statistics, participation trends, and country-wis
 ```bash
 git clone https://github.com/Shaswata110503/120-years-Summer-Olympic-Analysis.git
 cd 120-years-Summer-Olympic-Analysis
-
+```
+```bash
 2. Install dependencies:
 pip install -r requirements.txt
+```
 
 3. Make sure these CSV files are present:
-athlete_events.csv
+   <br>
+athlete_events.csv<br>
 noc_regions.csv
 
+```bash
 4. Run the Streamlit app:
 streamlit run main.py
-
+```
 ---
 
 ## 👨‍💻 Author
