@@ -1,4 +1,6 @@
 import numpy as np
+import pandas as pd
+import streamlit as st
 def medal_tally(df):
     medal_tally=df.drop_duplicates(subset=["Team","NOC","Games","Year","City","Sport","Event","Medal"])
     medal_tally=medal_tally.groupby('region').sum()[['Gold','Silver','Bronze']].sort_values('Gold',ascending=False).reset_index()
@@ -124,3 +126,24 @@ def men_v_women(df):
     final.rename(columns={"Name_x":"Male","Name_y":"Female"},inplace=True)
     final.fillna(0,inplace=True)
     return final
+
+
+def yearwise_medaltally_comparison(df, country1, country2):
+    temp_df = df.dropna(subset=["Medal"])
+    
+    temp_df.drop_duplicates(subset=['Team', 'NOC', 'Games', 'Year', 'City', 'Sport', 'Event', 'Medal'], inplace=True)
+    df_c1 = temp_df[temp_df['region'] == country1]
+    df_c2 = temp_df[temp_df['region'] == country2]
+
+    # Group by Year and count medals
+    c1_medals = df_c1.groupby('Year')['Medal'].count().reset_index()
+    c1_medals.rename(columns={'Medal': country1}, inplace=True)
+
+    c2_medals = df_c2.groupby('Year')['Medal'].count().reset_index()
+    c2_medals.rename(columns={'Medal': country2}, inplace=True)
+
+    # Merge both countries on Year
+    final_df = pd.merge(c1_medals, c2_medals, on='Year', how='outer').fillna(0)
+    final_df = final_df.sort_values('Year')
+
+    return final_df

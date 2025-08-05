@@ -80,6 +80,25 @@ if(user_menu=='Medal Tally'):
 
     st.table(medal_tally)
 
+
+
+    st.title("🏅 Yearwise Medal Tally Comparison")
+    countries = sorted(df['region'].dropna().unique())
+    country1=st.selectbox("Select Country",countries)
+    country2=st.selectbox("Select another Country",countries)
+    final_df =helper.yearwise_medaltally_comparison(df, country1,country2)
+
+    # Plotting the comparison
+    fig = px.line(final_df,
+                      x='Year',
+                      y=[country1, country2],
+                      labels={"value": "Medal Count", "variable": "Country"},
+                      title=f"Year-wise Medal Tally: {country1} vs {country2}")
+    st.plotly_chart(fig, use_container_width=True)
+
+
+
+
 if(user_menu=='Overall  Analysis'):
     cities=df['City'].unique().shape[0]
     editions=df['Year'].unique().shape[0]-1
