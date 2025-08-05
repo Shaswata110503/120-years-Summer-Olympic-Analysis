@@ -13,13 +13,13 @@ import scipy.stats
 st.set_page_config(page_title="Olympics Dashboard", layout="wide", initial_sidebar_state="collapsed")
 
 
-df=pd.read_csv(r'C:\Users\desha\OneDrive\Desktop\MYCODE\Python\projects python\EDA1\athlete_events.csv')
-region_df=pd.read_csv(r'C:\Users\desha\OneDrive\Desktop\MYCODE\Python\projects python\EDA1\noc_regions.csv')
+df=pd.read_csv(r'C:\Users\desha\OneDrive\Desktop\MYCODE\Data Analysis\athlete_events.csv')
+region_df=pd.read_csv(r'C:\Users\desha\OneDrive\Desktop\MYCODE\Data Analysis\noc_regions.csv')
 
 df=preprocessor.preprocess(df,region_df)
 
 st.sidebar.title("Olympics Analysis")
-st.sidebar.image(r"C:\Users\desha\OneDrive\Desktop\MYCODE\Python\projects python\EDA1\Olympic_rings_without_rims.png")
+st.sidebar.image(r"C:\Users\desha\OneDrive\Desktop\MYCODE\Data Analysis\Olympic_rings_without_rims.png")
 
 user_menu=st.sidebar.radio(
     'Select an Option',
